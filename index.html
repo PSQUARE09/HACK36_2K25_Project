@@ -98,6 +98,128 @@
     .btn-royal:hover {
       background: #e6c200;
     }
+    /* Section Common Styles */
+    section {
+      padding: 80px 40px;
+    }
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+      font-size: 42px;
+      color: #1B1F3B;
+      position: relative;
+    }
+    .section-title::after {
+      content: "";
+      display: block;
+      width: 100px;
+      height: 4px;
+      background: #ffd700;
+      margin: 10px auto;
+      border-radius: 2px;
+    }
+        
+   /* About / Our Legacy Section */
+   .about {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      padding: 50px;
+      max-width: 1000px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .about p {
+      font-size: 30px;
+      font-weight: 200;
+      margin: 20px 0;
+      color: #555;
+      line-height: 1.8;
+    }
+    #about .keep-tight{
+        margin-top: 1px;
+        margin-bottom: 1px;
+        font-size: 20px;
+    }
+    #about .part-headings{
+        margin-top: 1px;
+        margin-bottom: 1px;
+        font-size: 30px;
+
+    }
+    #about .unordered-list{
+        font-size: 20px;
+        list-style: none;
+    }
+     /* Cards: Services / Features */
+     .cards-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 50px;
+      padding: 100px;
+      margin-top: 40px;
+    }
+    .card {
+      background: #fff;
+      border: 2px solid #ffd700;
+      border-radius: 10px;
+      padding: 50px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      max-height: 750px;
+      overflow: hidden;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+    .card i {
+      font-size: 50px;
+      color: #1B1F3B;
+      margin-bottom: 20px;
+    }
+    .card h3 {
+      font-size: 26px;
+      margin-bottom: 15px;
+    }
+    .card p {
+      font-size: 16px;
+      color: #555;
+      line-height: 1.5;
+    }
+    .card .stock_image{
+        height: 80%;
+        width: 90%;
+        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.25);
+        border: 2px solid black;
+        border-radius: 10px;
+        margin-bottom: 30px;
+    }
+    .card .btn-terminologies{
+        background-color: #ffffff;
+        font-size: 35px;
+        font-weight: bold;
+        color: #000;
+        text-shadow: 3px 3px 4px rgba(0,0,0,0.3);
+        border: 3px solid black;
+        border-radius: 20px;
+        width: 100%;
+        height: 10%;
+        box-shadow: 3px 4px 6px rgba(0,0,0,0.3);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card .btn-terminologies:hover {
+    background-color: rgb(3, 3, 67);
+    color: #ffffff;
+    transform: translateY(-5px);
+    }
+    .card .heading-para{
+        font-size: 100px;
+        font-weight: bold;
+        color: #000;
+        text-shadow: 3px 3px 4px rgba(0,0,0,0.3);
+        margin-top: 35%;
+    }  
     </style>
 <body>
     <!-- Navbar -->
@@ -105,14 +227,14 @@
     <div class="logo">Quant Trade</div>
     <ul>
       <li><a href="#hero">Home</a></li>
-      <li><a href="#about">Our Legacy</a></li>
-      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About us</a></li>
+      <li><a href="#services">Courses</a></li>
       <li><a href="#market">Market Trends</a></li>
-      <li><a href="#portfolio">Portfolio</a></li>
       <li><a href="#news">News</a></li>
       <li><a href="#testimonials">Testimonials</a></li>
       <li><a href="#partners">Partners</a></li>
       <li><a href="#contact">Contact</a></li>
+      <li><a href="#login">Login/Register</a></li>
     </ul>
   </nav>
   <!-- Hero Section -->
@@ -121,5 +243,40 @@
     <p>Experience Royal Elegance in Financial Innovation</p>
     <a class="btn-royal" href="#about">Discover More</a>
   </header>
+  <!-- About / Our Legacy Section -->
+  <section id="about">
+    <div class="section-title">About us</div>
+    <div class="about">
+    <p class="keep-tight">
+        At QuantumTrade, we believe that financial freedom should not be limited by time or expertise. Our mission is to empower working professionals with the tools, knowledge, and support they need to confidently participate in the stock market — without disrupting their busy schedules.
+    </p>
+    <p class="keep-tight">
+        We provide a complete end-to-end solution that includes:
+    </p>
+    <ul class="unordered-list">
+        <li>Simplified Learning</li>
+        <li>Expert Advisory</li>
+        <li>Execution Support</li>
+    </ul>
+    <p class="keep-tight">
+        Join us and turn your potential into profits — backed by knowledge, guided by experts, and driven by results.
+    </p>
+    </div>
+  </section>
+   <!-- Services / Features Section -->
+   <section id="services">
+    <div class="section-title">Our courses</div>
+    <div class="cards-container">
+      <div class="card">
+        <i class="fas fa-chart-line"></i>
+        <img src="market_image.jpg" alt="stock image" class="stock_image">
+        <a href="#"><button class="btn-terminologies">Basic terminologies and Trade Execution</button></a>
+      </div>
+      <div class="card">
+        <i class="fas fa-lock"></i>
+        <p class="heading-para">Coming Soon</p>
+      </div>
+    </div>
+  </section>a2
 </body>
 </html>
