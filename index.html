@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* Global Reset and Typography */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      line-height: 1.6;
+    }
+    h1, h2, h3, h4, h5 {
+      font-family: 'Cinzel', serif;
+      color: #1B1F3B;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    a{
+        font-size: 1.5rem;
+    }
+     /* Navbar */
+     nav {
+      background: #1B1F3B;
+      color: #ffd700;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav .logo {
+      font-size: 28px;
+      font-weight: 600;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+    nav ul li a {
+      font-size: 1.5rem;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    nav ul li a:hover {
+      color: #ffffff;
+    }
+    
+    /* Hero Section */
+    header.hero {
+      background: linear-gradient(135deg, #1B1F3B, #000);
+      color: #ffd700;
+      text-align: center;
+      padding: 120px 40px;
+      position: relative;
+      overflow: hidden;
+    }
+    header.hero::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      height: 60px;
+      background: url('https://www.transparenttextures.com/patterns/asfalt-light.png');
+      opacity: 0.3;
+    }
+    header.hero h1 {
+      font-size: 56px;
+      margin-bottom: 20px;
+    }
+    header.hero p {
+      font-size: 22px;
+      margin-bottom: 40px;
+    }
+    .btn-royal {
+      background: #ffd700;
+      color: #1B1F3B;
+      padding: 15px 30px;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+    .btn-royal:hover {
+      background: #e6c200;
+    }
+    </style>
+<body>
+    <!-- Navbar -->
+  <nav>
+    <div class="logo">Quant Trade</div>
+    <ul>
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#about">Our Legacy</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#market">Market Trends</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#partners">Partners</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  <!-- Hero Section -->
+  <header class="hero" id="hero">
+    <h1>Royal Fintech Empire</h1>
+    <p>Experience Royal Elegance in Financial Innovation</p>
+    <a class="btn-royal" href="#about">Discover More</a>
+  </header>
+</body>
+</html>
