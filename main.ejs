@@ -1,0 +1,591 @@
+// Same index.html code connected with backend server...
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fintech and Blockchain</title>
+</head>
+<style>
+    /* Global Reset and Typography */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      line-height: 1.6;
+    }
+    h1, h2, h3, h4, h5 {
+      font-family: 'Cinzel', serif;
+      color: #1B1F3B;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    a{
+        font-size: 1.5rem;
+    }
+     /* Navbar */
+     nav {
+      background: #1B1F3B;
+      color: #ffd700;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav .logo {
+      font-size: 28px;
+      font-weight: 600;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+    nav ul li a {
+      font-size: 1.5rem;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    nav ul li a:hover {
+      color: #ffffff;
+    }
+    
+    /* Hero Section */
+    header.hero {
+      background: linear-gradient(135deg, #1B1F3B, #000);
+      color: #ffd700;
+      text-align: center;
+      padding: 120px 40px;
+      position: relative;
+      overflow: hidden;
+    }
+    header.hero::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      height: 60px;
+      background: url('https://www.transparenttextures.com/patterns/asfalt-light.png');
+      opacity: 0.3;
+    }
+    header.hero h1 {
+      font-size: 56px;
+      margin-bottom: 20px;
+    }
+    header.hero p {
+      font-size: 22px;
+      margin-bottom: 40px;
+    }
+    .btn-royal {
+      background: #ffd700;
+      color: #1B1F3B;
+      padding: 15px 30px;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+    .btn-royal:hover {
+      background: #e6c200;
+    }
+    /* Section Common Styles */
+    section {
+      padding: 80px 40px;
+    }
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+      font-size: 42px;
+      color: #1B1F3B;
+      position: relative;
+    }
+    .section-title::after {
+      content: "";
+      display: block;
+      width: 100px;
+      height: 4px;
+      background: #ffd700;
+      margin: 10px auto;
+      border-radius: 2px;
+    }
+   /* About / Our Legacy Section */
+   .about {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      padding: 50px;
+      max-width: 1000px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .about p {
+      font-size: 30px;
+      font-weight: 200;
+      margin: 20px 0;
+      color: #555;
+      line-height: 1.8;
+    }
+    #about .keep-tight{
+        margin-top: 1px;
+        margin-bottom: 1px;
+        font-size: 20px;
+    }
+    #about .part-headings{
+        margin-top: 1px;
+        margin-bottom: 1px;
+        font-size: 30px;
+
+    }
+    #about .unordered-list{
+        font-size: 20px;
+        list-style: none;
+    }
+     /* Cards: Courses / Features */
+     .cards-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 50px;
+      padding: 100px;
+      margin-top: 40px;
+    }
+    .card {
+      background: #fff;
+      border: 2px solid #ffd700;
+      border-radius: 10px;
+      padding: 50px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      max-height: 750px;
+      overflow: hidden;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+    .card i {
+      font-size: 50px;
+      color: #1B1F3B;
+      margin-bottom: 20px;
+    }
+    .card h3 {
+      font-size: 26px;
+      margin-bottom: 15px;
+    }
+    .card p {
+      font-size: 16px;
+      color: #555;
+      line-height: 1.5;
+    }
+    .card .stock_image{
+        height: 80%;
+        width: 90%;
+        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.25);
+        border: 2px solid black;
+        border-radius: 10px;
+        margin-bottom: 30px;
+    }
+    .card .btn-terminologies{
+        background-color: #ffffff;
+        font-size: 35px;
+        font-weight: bold;
+        color: #000;
+        text-shadow: 3px 3px 4px rgba(0,0,0,0.3);
+        border: 3px solid black;
+        border-radius: 50px;
+        width: 100%;
+        height: 10%;
+        box-shadow: 3px 4px 6px rgba(0,0,0,0.3);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card .btn-terminologies:hover {
+    background-color: rgb(3, 3, 67);
+    color: #ffffff;
+    transform: translateY(-5px);
+    }
+    .card .heading-para{
+        font-size: 100px;
+        font-weight: bold;
+        color: #000;
+        text-shadow: 3px 3px 4px rgba(0,0,0,0.3);
+        margin-top: 35%;
+    } 
+     /* Market Overview Section */
+     .market-section {
+      background: #fff;
+      border-radius: 10px;
+      padding: 50px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      max-width: 1200px;
+      margin: 0 auto;
+      height: 600px;
+    }
+    .chart-container {
+      position: relative;
+      width: 100%;
+      height: 400px;
+    }
+    .para-market{
+      font-size: 30px;
+      margin-top: 30px;
+      font-weight: bold;
+      margin-right: 100px;
+    }
+    .btn-market{
+        background-color: #161a2d;
+        color: white;
+        box-shadow: 3px 4px 6px rgba(0,0,0,0.3);
+        transition: transform 0.2s ease, box-shadow 0.2s ease; 
+        font-size: 30px;
+        font-weight: bold;
+        height: 50px;
+        width: 300px;
+        border-radius: 30px;
+    }
+    .market-class a{
+      margin-left: 50px;
+    }
+    /* News section */
+    .news-container{
+      border: 2px solid yellow;
+      border-radius: 20px;
+      margin: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      margin-left: 20%;
+      margin-right: 20%; 
+      height: 100px;
+      background-color: #ffffff;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1)
+    }
+    .para-container{
+      color: #000;
+      font-size: 50px;
+      font-weight: bold;
+    }
+    .news-container:hover{
+      transform: translateY(-5px);
+    }
+    /* Testimonials Section */
+    .testimonials-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      /* max-width: 1000px; */
+      margin: 0 50px;
+    }
+    .testimonial {
+      background: #fff;
+      padding: 30px;
+      border-left: 4px solid #ffd700;
+      border-radius: 5px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      font-size: 25px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .testimonial:hover {
+      transform: translateY(-5px);
+    }
+    .testimonial p {
+      font-size: 25px;
+      color: #555;
+      margin-bottom: 10px;
+    }
+    .testimonial span {
+      display: block;
+      font-weight: bold;
+      color: #1B1F3B;
+    } 
+    /* Partners Section */
+    .partners-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+    .partner {
+      flex: 1 1 150px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .partner img {
+      max-width: 100%;
+      border: 2px solid #ffd700;
+      border-radius: 10px;
+      padding: 10px;
+      background: #fff;
+    }
+    .partner:hover{
+        transform: translateY(-5px);
+    }
+
+     /* Contact Section */
+     #contact form {
+      max-width: 600px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    #contact form label {
+    font-size: 37px;
+    color: #1B1F3B;
+}
+    #contact form input,
+    #contact form textarea {
+      padding: 12px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      transition: border 0.3s ease;
+    }
+    #contact form input:focus,
+    #contact form textarea:focus {
+      border-color: #1B1F3B;
+      outline: none;
+    }
+    #contact form button {
+      padding: 15px;
+      font-size: 16px;
+      background: #1B1F3B;
+      color: #ffd700;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    #contact form button:hover {
+      background: #161a2d;
+    }
+    .contact-class{
+      font-size: 200px;
+      font-weight: bold;
+      margin: 30px;
+    }
+    .contact-input{
+      margin-left: 107px;
+    }
+    .contact-area{
+      margin-left: 50px;
+    }
+    </style>
+<body>
+    <!-- Navbar -->
+  <nav>
+    <div class="logo">Quant Trade</div>
+    <ul>
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#about">About us</a></li>
+      <li><a href="#courses">Courses</a></li>
+      <li><a href="#market">Market Trends</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#partners">Partners</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="http://127.0.0.1:5500/login.html">Login/Register</a></li>
+    </ul>
+  </nav>
+  <!-- Hero Section -->
+  <header class="hero" id="hero">
+    <h1 style="color: white;">Quant Trade</h1>
+    <p>Trade Smarter, Not Harder</p>
+    <p>Learn. Grow. Profit. — Even with a 9-to-5</p>
+    <a class="btn-royal" href="#about">Discover More</a>
+  </header>
+  <!-- About / Our Legacy Section -->
+  <section id="about">
+    <div class="section-title">About us</div>
+    <div class="about">
+    <p class="keep-tight">
+        At QuantumTrade, we believe that financial freedom should not be limited by time or expertise. Our mission is to empower working professionals with the tools, knowledge, and support they need to confidently participate in the stock market — without disrupting their busy schedules.
+    </p>
+    <p class="keep-tight">
+        We provide a complete end-to-end solution that includes:
+    </p>
+    <ul class="unordered-list">
+        <li>Simplified Learning</li>
+        <li>Expert Advisory</li>
+        <li>Execution Support</li>
+    </ul>
+    <p class="keep-tight">
+        Join us and turn your potential into profits — backed by knowledge, guided by experts, and driven by results.
+    </p>
+    </div>
+  </section>
+   <!-- Courses / Features Section -->
+   <section id="courses">
+    <div class="section-title">Our courses</div>
+    <div class="cards-container">
+      <div class="card">
+        <i class="fas fa-chart-line"></i>
+        <img src="market_image.jpg" alt="stock image" class="stock_image">
+        <a href="#"><button class="btn-terminologies">Basic terminologies and Trade Execution</button></a>
+      </div>
+      <div class="card">
+        <i class="fas fa-lock"></i>
+        <p class="heading-para">Coming Soon</p>
+      </div>
+    </div>
+  </section>
+  <!-- Services
+   <section id="services">
+    <div class="section-title">Our Services</div>
+    <div class="card-container">
+      <div class="card">
+        <h3>Index</h3>
+      </div>
+      <div class="card">
+        <h3>Index</h3>
+      </div>
+    </div>
+   </section> -->
+  <!-- Market Trends Section -->
+  <section id="market">
+    <div class="section-title">Market Trends</div>
+    <div class="market-section">
+      <div class="chart-container">
+        <!-- <canvas id="marketChart"><img src="graph_image.jpg" alt="Trends"></canvas> -->
+        <img src="graph_image.jpg" alt="Trends">
+        <div class="market-class">
+        <p class="para-market">For tracking the real time market prices: <a href="https://in.tradingview.com/"><button class="btn-market">Click Here</button></a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- News -->
+  <section id="news">
+    <div class="section-title">News</div>
+    <div class="news-container">
+      <a href="https://www.moneycontrol.com/news/business/icici-bank-q4-results-net-profit-up-18-yoy-at-rs-12-630-crore-beats-estimate-12998162.html"><p class="news-para">ICICI Bank Q4 Results: Net profit up 18% YoY at Rs 12,630 crore, beats estimate; Rs 11 dividend declared</p></a>
+    </div>
+    <div class="news-container">
+      <a href="https://www.moneycontrol.com/news/business/markets/more-than-100-small-caps-rise-between-10-28-as-broader-indices-rally-12998382.html"><p class="news-para">More than 100 small caps rise between 10-28% as broader indices rally</p></a>
+    </div>
+    <div class="news-container">
+      <a href="https://www.moneycontrol.com/news/photos/business/markets/market-posts-biggest-weekly-gains-since-feb-2021-rupee-appreciates-12998381.html"><p class="news-para">Market posts biggest weekly gains since Feb 2021; rupee appreciates</p></a>
+    </div>
+    </section>
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+        <div class="section-title">Testimonials</div>
+        <div class="testimonials-container">
+          <div class="testimonial">
+            <p>
+                "QuantumTrade changed the way I look at investing."
+                As a full-time IT professional, I never had the time to explore stock trading. Their step-by-step learning program and ongoing support made the whole process simple and stress-free. I’ve started seeing real profits — and more importantly, I understand what I’m doing now!
+  
+            </p>
+            <span>— Ravi Mehta, Software Engineer, Pune</span>
+          </div>
+          <div class="testimonial">
+            <p>
+                "Finally, a platform that actually cares about your growth."
+                The team at QuantumTrade is incredible. They don’t just teach you — they guide you through every decision. I feel more confident and in control of my finances now. Highly recommended for anyone who wants to earn from the stock market but doesn’t know where to begin
+            </p>
+            <span>— Priya Sharma, HR Manager, Bengaluru</span>
+          </div>
+          <div class="testimonial">
+            <p>"Perfect for busy professionals like me!"
+                QuantumTrade gave me the freedom to invest without spending hours learning complex stuff. I get expert advice and timely insights, and my trading is now well-informed. It's like having a personal trading mentor
+            </p>
+            <span>— Swati Desai, Chartered Accountant, Mumbai</span>
+          </div>
+        </div>
+      </section>
+       <!-- Partners Section -->
+  <section id="partners">
+    <div class="section-title">Our Broking Partners</div>
+    <div class="partners-container">
+      <div class="partner">
+        <img src="image1.png" alt="Partner Logo">
+      </div>
+      <div class="partner">
+        <img src="image2.png" alt="Partner Logo">
+      </div>
+    </div>
+  </section>
+      <!-- Contact Section -->
+  <section id="contact">
+    <div class="section-title">Contact Us</div>
+    <form id="contactForm" action="/new" method="post">
+      <div>
+        <label for="contactName" class="contact-class">Your Name</label>
+        <input class="contact-input" type="text" id="contactName" placeholder="Enter your name" name="name" required>
+      </div>
+      <div>
+        <label for="contactEmail" class="contact-class">Your Email</label>
+        <input class="contact-input" type="email" id="contactEmail" placeholder="Enter your email" name="email" required>
+      </div>
+      <div>
+        <label class="contact-class" for="contactMessage">Your Message</label>
+        <textarea class="contact-area" id="contactMessage" rows="5" placeholder="Enter your message" name="details" required></textarea>
+      </div>
+      <div style="text-align: center;">
+        <button type="submit">Send Message</button>
+      </div>
+    </form>
+  </section>
+
+     <!-- JavaScript for Chart and Form Interactions -->
+  <script>
+    // Initialize Market Chart using Chart.js
+    const ctx = document.getElementById('marketChart').getContext('2d');
+    const marketChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['10:00', '11:00', '12:00', '13:00', '14:00', '15:00'],
+        datasets: [{
+          label: 'Market Index',
+          data: [102, 104, 101, 105, 107, 106],
+          backgroundColor: 'rgba(255,215,0,0.2)',
+          borderColor: '#ffd700',
+          borderWidth: 2,
+          fill: true,
+          tension: 0.3
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          y: {
+            beginAtZero: false
+          }
+        }
+      }
+    });
+
+    // Handle Trade Form Submission
+    document.getElementById('tradeForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const type = document.getElementById('tradeType').value;
+      const asset = document.getElementById('tradeAsset').value;
+      const amount = document.getElementById('tradeAmount').value;
+      const price = document.getElementById('tradePrice').value;
+      alert(`Trade Placed: ${type.toUpperCase()} ${amount} units of ${asset} at $${price}`);
+      this.reset();
+    });
+
+    // Handle Contact Form Submission
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Thank you for contacting Royal Fintech Empire. We will get back to you shortly.');
+      this.reset();
+    });
+  </script>
+</body>
+</html>
